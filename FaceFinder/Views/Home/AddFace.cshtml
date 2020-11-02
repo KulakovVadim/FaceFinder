@@ -1,0 +1,12 @@
+﻿
+
+<h2>Add Face:</h2>
+@{
+    <form method="post" action="" enctype="multipart/form-data">
+        <input type="hidden" name="id">
+        <input type="hidden" name="id_person" value=@ViewBag.person_id>
+        <input type="file" name="photo">
+        <br>
+        <input type="submit" value="Добавить" />
+    </form>
+}

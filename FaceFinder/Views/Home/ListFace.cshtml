@@ -1,0 +1,24 @@
+﻿@using FaceFinder.Data.Models
+@model IEnumerable<Face>
+
+<h2>Faces:</h2>
+@{
+
+
+    foreach (var face in Model)
+    {
+
+
+        <div class="KL4Bh"><img alt="" class="FFVAD" decoding="auto" sizes="293px" src="@face.fileaddress" style="object-fit: cover;"></div>
+        <form action="~/person/@face.id_person/face/@face.id/delete">
+            <button>Удалить</button>
+        </form>
+        <br>
+    }
+    <br>
+    <form action="~/person/@ViewBag.person_id/face/add">
+
+        <button>Добавить</button>
+
+    </form>
+}

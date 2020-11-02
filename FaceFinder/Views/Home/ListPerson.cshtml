@@ -1,0 +1,28 @@
+﻿@using FaceFinder.Data.Models
+@model IEnumerable<Person>
+
+<h2>Persons:</h2>
+<div class="col justify-content-md-center">
+    @foreach (var person in Model)
+    {
+        <div>
+            <div>id: @person.id</div>
+            <div>Фамилия: @person.surname</div>
+            <div>Имя:@person.name</div>
+            <div>Отчество: @person.fathname</div>
+            <form action="person/@person.id">
+                <button>Редактировать</button>
+            </form>
+            <form action="person/@person.id/delete">
+                <button>Удалить</button>
+            </form>
+            <form action="person/@person.id/face">
+                <button>Фотографии</button>
+            </form>
+            <br>
+        </div>
+    }
+</div>
+    <form action="~/person/add">
+        <button>Добавить человека</button>
+    </form>

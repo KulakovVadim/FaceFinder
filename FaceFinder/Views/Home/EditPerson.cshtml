@@ -1,0 +1,30 @@
+﻿
+@using FaceFinder.Data.Models
+@model Person
+
+<h2>Edit Person:</h2>
+@{
+    if (Model != null)
+    {
+        Person p = Model;
+        <form method="post" action="">
+            <input type="hidden" value="@p.id" name="id" />
+            <p>Фамилия</p>
+            <input type="text" value=@p.surname name="surname" />
+            <p>Имя</p>
+            <input type="text" value=@p.name name="name" />
+            <p>Отчество</p>
+            <input type="text" value=@p.fathname name="fathname" />
+            <br>
+            <input type="submit" value="Сохранить" />
+        </form>
+
+        <form action="@p.id/face">
+            <button>Фотографии</button>
+        </form>
+    }
+    else
+    {
+        <p>Не найден</p>
+    }
+}
